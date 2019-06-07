@@ -1,0 +1,9 @@
+{
+    "require": {
+        "mgp25/instagram-php": "^6.0",
+        "php-curl-class/php-curl-class": "^8.6",
+        "paquettg/php-html-parser": "^2.0",
+        "league/climate": "^3.5",
+        "campo/random-user-agent": "^1.3"
+    }
+}
