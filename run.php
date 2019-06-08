@@ -43,7 +43,13 @@ for ( $x=1; $x<$posting; $x++ ) {
     get_random_image($keyword);
     $photoFilename = 'temp.jpg';
     $ua = \Campo\UserAgent::random();
-    $captionText = get_hashtag($keyword,$ua);
+
+    if (!empty($caption)) {
+        $captionText = $caption." ".get_hashtag($keyword,$ua);
+    } else {
+        $captionText = get_hashtag($keyword,$ua);
+    }
+
     $photo = new \InstagramAPI\Media\Photo\InstagramPhoto($photoFilename);
     
     try {
@@ -61,7 +67,7 @@ for ( $x=1; $x<$posting; $x++ ) {
         ];
         $climate->table($progress);
         $climate->br();
-        
+
         // print hastag
         $climate->out($captionText);
         $climate->br();
