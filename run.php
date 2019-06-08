@@ -21,7 +21,7 @@ try {
     die();
 }
 
-for ( $x=1; $x<$posting; $x++ ) {
+for ( $x=1; $x<=$posting; $x++ ) {
     
     // clear screen
     $climate->clear();
@@ -31,7 +31,6 @@ for ( $x=1; $x<$posting; $x++ ) {
     $config = [
         [
         'username: '.$username,
-        'password: ***',
         'keyword: '.$keyword,
         'posting: '.$posting,
         ],
