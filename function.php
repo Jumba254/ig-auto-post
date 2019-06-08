@@ -5,8 +5,11 @@ require __DIR__ . '/vendor/autoload.php';
 use \Curl\Curl;
 use \PHPHtmlParser\Dom;
 
-function get_random_image ($query) {
-    file_put_contents('temp.jpg', file_get_contents('https://source.unsplash.com/featured/?'.$query));
+function get_random_image ($query,$ua) {
+    $curl = new Curl();
+    $curl->setUserAgent($ua);
+    $curl->setOpt(CURLOPT_FOLLOWLOCATION, true);
+    $curl->download('https://source.unsplash.com/featured?'.$query, 'temp.jpg');
 }
 
 function get_hashtag ($query,$ua) {
